@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://joejokml76fi"]
+
+[ext_resource type="PackedScene" uid="uid://v7on45dtyw0d" path="res://prefabs/player.tscn" id="1_cbr7r"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uq3at"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ci3aa"]
+sky_material = SubResource("ProceduralSkyMaterial_uq3at")
+
+[sub_resource type="Environment" id="Environment_ludwj"]
+background_mode = 1
+background_color = Color(0.101961, 0.101961, 0.101961, 1)
+sky = SubResource("Sky_ci3aa")
+ambient_light_source = 2
+tonemap_mode = 2
+glow_enabled = true
+fog_light_color = Color(0.203922, 0.223529, 0.254902, 1)
+
+[node name="main" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ludwj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("1_cbr7r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4, -1)
