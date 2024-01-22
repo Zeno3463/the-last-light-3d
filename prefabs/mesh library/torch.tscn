@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://du7lcvnv07kha"]
+
+[ext_resource type="ArrayMesh" uid="uid://dsve2lu8i8rh0" path="res://assets/3d models/torch.obj" id="1_34paj"]
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("1_34paj")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.132161, 0.416654, 0)
+light_energy = 0.1
+omni_range = 2.15635

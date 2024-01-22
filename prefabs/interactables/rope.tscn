@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo3234h6836of"]
+
+[ext_resource type="ArrayMesh" uid="uid://uxsjsp23cikn" path="res://assets/interactables/rope.obj" id="1_p6q0y"]
+[ext_resource type="Script" path="res://scripts/inventory item.gd" id="1_u7uld"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0ptqt"]
+radius = 1.0
+
+[node name="Rope" type="Area3D"]
+script = ExtResource("1_u7uld")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_0ptqt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_p6q0y")

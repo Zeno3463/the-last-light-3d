@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dw3ae2k2tm5ju"]
+
+[ext_resource type="PackedScene" uid="uid://cbs38t5pnyat6" path="res://prefabs/mesh library/brick.tscn" id="1_kguof"]
+
+[node name="mesh instance" type="Node3D"]
+
+[node name="MeshInstance3D" parent="." instance=ExtResource("1_kguof")]

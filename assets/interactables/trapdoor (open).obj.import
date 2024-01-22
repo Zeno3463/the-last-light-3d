@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://copqv6gkr1olk"
+path="res://.godot/imported/trapdoor (open).obj-270aa28485dbc9057d9a77d521bb6628.mesh"
+
+[deps]
+
+files=["res://.godot/imported/trapdoor (open).obj-270aa28485dbc9057d9a77d521bb6628.mesh"]
+
+source_file="res://assets/interactables/trapdoor (open).obj"
+dest_files=["res://.godot/imported/trapdoor (open).obj-270aa28485dbc9057d9a77d521bb6628.mesh", "res://.godot/imported/trapdoor (open).obj-270aa28485dbc9057d9a77d521bb6628.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

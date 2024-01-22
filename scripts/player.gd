@@ -3,8 +3,8 @@ extends CharacterBody3D
 class_name Player
 
 var speed
-const WALK_SPEED = 3.0
-const SPRINT_SPEED = 5.0
+const WALK_SPEED = 4.0
+const SPRINT_SPEED = 6.0
 const JUMP_VELOCITY = 3.5
 const SENSITIVITY = 0.001
 
@@ -27,9 +27,16 @@ func _unhandled_input(event):
 		$Head/Camera3D.rotate_x(-event.relative.y * SENSITIVITY)
 		$Head/Camera3D.rotation.x = clamp($Head/Camera3D.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		
+	if Input.is_action_just_pressed("interact"):
+		for area in $Head/Camera3D/Area3D.get_overlapping_areas():
+			if area is InventoryItem:
+				area.interact()
+			if area is Interactable:
+				area.interact()
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -68,3 +75,17 @@ func _headbob(time):
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+func _on_area_3d_area_entered(area):
+	if area is InventoryItem or area is Interactable:
+		if area.display_name:
+			inventory.show_interact_text(area.name)
+
+func _on_area_3d_area_exited(area):
+	if area is InventoryItem or area is Interactable:
+		inventory.hide_interact_text()
+
+func _on_area_3d_2_body_entered(body):
+	if body.name == "Entity":
+		await get_tree().create_timer(0.01).timeout
+		body.get_parent().get_parent().queue_free()

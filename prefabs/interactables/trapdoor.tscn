@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7x5gpdoq44ww"]
+
+[ext_resource type="Script" path="res://scripts/interactable.gd" id="1_8b1fa"]
+[ext_resource type="ArrayMesh" uid="uid://hvucshat018c" path="res://assets/interactables/trapdoor (closed).obj" id="1_prg7t"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h7s5d"]
+
+[node name="Trapdoor" type="Area3D"]
+script = ExtResource("1_8b1fa")
+key_name = "Rope"
+item_to_obtain_after_interact_with_key = "Key"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_h7s5d")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = ExtResource("1_prg7t")
