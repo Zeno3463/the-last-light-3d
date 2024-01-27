@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddv37vnjhwpfh"]
+
+[ext_resource type="Script" path="res://scripts/inventory item.gd" id="1_ikrgc"]
+[ext_resource type="ArrayMesh" uid="uid://drandh3pq2ua4" path="res://assets/interactables/key.obj" id="2_vysxu"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0ptqt"]
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2a431"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Key" type="Area3D"]
+script = ExtResource("1_ikrgc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_0ptqt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_vysxu")
+surface_material_override/0 = SubResource("StandardMaterial3D_2a431")

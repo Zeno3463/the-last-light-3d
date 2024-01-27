@@ -66,7 +66,6 @@ _data = {
 script = ExtResource("1_chh1q")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-modulate = Color(1, 1, 1, 0)
 offset_top = 36.0
 offset_right = 960.0
 offset_bottom = 636.0
@@ -76,8 +75,6 @@ layout_mode = 2
 mouse_filter = 1
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
-text = "[center]hello world
-how are you"
 fit_content = true
 autowrap_mode = 0
 

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqq3luqbdmisy"]
+
+[ext_resource type="Script" path="res://scripts/jumpscare.gd" id="1_cq2xv"]
+[ext_resource type="Texture2D" uid="uid://bgjx5s8v6qwoi" path="res://assets/jumpscares/jumpscare-1.png" id="1_igxy1"]
+
+[node name="jumpscare" type="CanvasLayer"]
+script = ExtResource("1_cq2xv")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+texture_filter = 1
+offset_right = 960.0
+offset_bottom = 600.0
+texture = ExtResource("1_igxy1")

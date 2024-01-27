@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bua7ua1okm3ak"]
+
+[ext_resource type="Script" path="res://scripts/interactable.gd" id="1_xeusg"]
+[ext_resource type="Texture2D" uid="uid://bmmqa3pgqoihr" path="res://assets/interactables/book.png" id="2_1s200"]
+[ext_resource type="ArrayMesh" uid="uid://cvblbpfc5j6xi" path="res://assets/interactables/book.obj" id="2_cu6bb"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0ptqt"]
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2xsov"]
+albedo_color = Color(0.25098, 0.25098, 0.25098, 1)
+albedo_texture = ExtResource("2_1s200")
+
+[node name="Book" type="Area3D"]
+script = ExtResource("1_xeusg")
+is_book = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_0ptqt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_2xsov")
+mesh = ExtResource("2_cu6bb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+offset_right = 953.0
+offset_bottom = 606.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/CenterContainer"]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+color = Color(0.313726, 0.384314, 0.384314, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/CenterContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "In the twilight hours, where dreams unfold,
+A monster lurks, its story untold.
+Beneath the bed, in shadows deep,
+It creeps, in silence, as the child sleeps."
+fit_content = true
+autowrap_mode = 0

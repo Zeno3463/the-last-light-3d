@@ -5,6 +5,8 @@ var items: Array[String] = []
 func add_to_inventory(item: String):
 	items.append(item)
 	
+func clear_inventory():
+	items = []
 
 func delete_from_inventory(item_name: String):
 	items = items.reduce(func(item): return item.item_name != item_name)

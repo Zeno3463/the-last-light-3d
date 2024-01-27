@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The Last Light 3D"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/scene 1.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 inventory="*res://prefabs/inventory.tscn"
+Jumpscare="*res://scenes/jumpscare.tscn"
 
 [display]
 

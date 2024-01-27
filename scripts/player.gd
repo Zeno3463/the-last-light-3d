@@ -15,6 +15,9 @@ var t_bob = 0.0
 var expelling = false
 var expel_val = Vector3.ZERO
 
+@export var door: Area3D
+var jump_scare_trigger = false
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 9.8
 
@@ -37,6 +40,9 @@ func _process(_delta):
 				area.interact()
 			if area is Interactable:
 				area.interact()
+			if area.name == "Door" and jump_scare_trigger:
+				await get_tree().create_timer(0.9).timeout
+				Jumpscare.jump_scare(true)
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -87,5 +93,12 @@ func _on_area_3d_area_exited(area):
 
 func _on_area_3d_2_body_entered(body):
 	if body.name == "Entity":
-		await get_tree().create_timer(0.01).timeout
-		body.get_parent().get_parent().queue_free()
+		await get_tree().create_timer(0.1).timeout
+		door.get_node("AnimationPlayer").play("RESET")
+		if get_tree().current_scene.name == "scene 1":
+			jump_scare_trigger = true
+		elif get_tree().current_scene.name == "scene 2":
+			body.get_parent().get_parent().queue_free()
+	if body.name == "Entity2":
+		await get_tree().create_timer(0.1).timeout
+		Jumpscare.jump_scare(true)
