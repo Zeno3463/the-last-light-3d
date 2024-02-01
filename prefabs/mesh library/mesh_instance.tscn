@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dw3ae2k2tm5ju"]
+[gd_scene load_steps=3 format=3 uid="uid://dw3ae2k2tm5ju"]
 
 [ext_resource type="PackedScene" uid="uid://cbs38t5pnyat6" path="res://prefabs/mesh library/brick.tscn" id="1_kguof"]
+[ext_resource type="PackedScene" uid="uid://d2ghht15x2y0p" path="res://prefabs/mesh library/wall.tscn" id="2_erbcg"]
 
 [node name="mesh instance" type="Node3D"]
 
 [node name="MeshInstance3D" parent="." instance=ExtResource("1_kguof")]
+
+[node name="MeshInstance3D2" parent="." instance=ExtResource("2_erbcg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)

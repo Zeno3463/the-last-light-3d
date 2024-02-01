@@ -19,6 +19,7 @@ func interact():
 			get_tree().get_root().get_child(-1).spawn_monster()
 		return
 	if last_interactable:
+		Jumpscare.curr_scene += 1
 		get_tree().change_scene_to_file("res://scenes/scene 5.tscn")
 	if item_to_obtain_after_interact_with_key:
 		inventory.add_to_inventory(item_to_obtain_after_interact_with_key)

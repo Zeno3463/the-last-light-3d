@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkxkvnr1n35bt"]
+
+[ext_resource type="FontFile" uid="uid://ko765ky2v5fg" path="res://fonts/Frijole-Regular.ttf" id="1_e72fg"]
+
+[node name="scene 6" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 963.0
+offset_bottom = 605.0
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 963.0
+offset_bottom = 601.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.615686, 0, 0, 0.741176)
+theme_override_fonts/normal_font = ExtResource("1_e72fg")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]Lurking Shadows"
+fit_content = true
+autowrap_mode = 0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 0.835294, 0.803922, 0.164706)
+theme_override_fonts/normal_font = ExtResource("1_e72fg")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[center]Thank you for playing"
+fit_content = true
+autowrap_mode = 0

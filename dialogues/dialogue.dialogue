@@ -1,12 +1,7 @@
 ~ start
 
-You: [[Hi|Hello|Howdy]], this is some dialogue.
-Nathan: Here are some choices.
-- First one
-	Nathan: You picked the first one.
-- Second one
-	Nathan: You picked the second one.
-- End the conversation => END
-Nathan: For more information see the online documentation.
+Zeno: Ahhh!!!!
+Zeno: Oh, that was a dream all along? Phew.
+Zeno: But it felt so real... got to make this into a game.
 
 => END
